@@ -2,7 +2,7 @@ run: main.gp mylib.so primes.bin
 	cat main.gp |gp -q
 	
 mylib.so: mylib.c
-	cc -fPIC -shared -o mylib.so mylib.c
+	cc -fPIC -march=native -O3 -shared -o mylib.so mylib.c
 
 clean:
 	rm -f *~ *.so *.o
